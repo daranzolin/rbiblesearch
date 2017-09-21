@@ -17,8 +17,7 @@ biblesearch_GET <- function(url) {
                  httr::user_agent("rbiblesearch - https://github.com/daranzolin/rbiblesearch")
   )
   httr::stop_for_status(r)
-  r %>%
-    httr::content("text") %>%
-    jsonlite::fromJSON()
+  r <- httr::content(r, "text")
+  jsonlite::fromJSON(r)
 }
 

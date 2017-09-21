@@ -8,7 +8,7 @@
 #' get_biblesearch_versions()
 get_biblesearch_versions <- function() {
   url <- "https://bibles.org/v2/versions.js"
-  biblesearch_GET(url) %>%
-    .[[1]] %>%
-    .[[1]]
+  x <- biblesearch_GET(url)
+  x <- x[[1]]
+  x[[1]]
 }

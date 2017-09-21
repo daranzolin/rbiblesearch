@@ -1,7 +1,3 @@
-set_biblesearch_token <- function(token) {
-  Sys.setenv(BIBLESEARCH_API_TOKEN = token)
-}
-
 clean_text <- function(text) {
   text <- gsub("<.*?>", "", text)
   text <- gsub("\n", "", text)

@@ -18,5 +18,5 @@ biblesearch_passage <- function(version = NULL, book = NULL, verses = NULL) {
   url <- sprintf(BASE_URL, book, verses, version)
   text <- biblesearch_GET(url)$response$search$result$passages$text
   if (is.null(text)) stop("No text available for that version.", call. = FALSE)
-  clean_text(text)
+  clean_text(text, version)
 }

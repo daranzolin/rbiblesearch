@@ -4,7 +4,7 @@
 #' @param book book, e.g. "Genesis"
 #' @param verses character vector, e.g. "1-5"
 #'
-#' @return character vector
+#' @return text
 #' @export
 #'
 #' @examples
@@ -17,5 +17,6 @@ biblesearch_passage <- function(version = NULL, book = NULL, verses = NULL) {
   BASE_URL <- "https://bibles.org/v2/passages.js?q[]=%s+%s&version=%s"
   url <- sprintf(BASE_URL, book, verses, version)
   text <- biblesearch_GET(url)$response$search$result$passages$text
+  if (is.null(text)) stop("No text available for that version.", call. = FALSE)
   clean_text(text)
 }

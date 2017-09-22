@@ -14,7 +14,7 @@ biblesearch_passage(version = NULL, book = NULL, verses = NULL)
 \item{verses}{character vector, e.g. "1-5"}
 }
 \value{
-character vector
+text
 }
 \description{
 Get Passage

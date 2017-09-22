@@ -2,3 +2,4 @@
 
 export(biblesearch_passage)
 export(get_biblesearch_versions)
+export(set_biblesearch_key)
